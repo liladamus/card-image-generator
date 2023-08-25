@@ -1,0 +1,30 @@
+{
+  "name": "card-generator-cli",
+  "version": "1.4.2694269",
+  "description": "A CLI tool to generate cards.",
+  "main": "index-transpiled.js",
+  "preferGlobal": true,
+  "bin": {
+    "card-generator": "./index.mjs"
+  },
+  "scripts": {
+    "transpile": "babel index.mjs --out-file index-transpiled.js",
+    "add-shebang": "echo '#!/usr/bin/env node' | cat - index-transpiled.js > temp && mv temp index-transpiled.js",
+    "build": "npm run transpile && npm run add-shebang",
+    "deploy": "npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.10",
+    "axios": "^1.4.0",
+    "canvas": "^2.11.2",
+    "esm": "^3.2.25",
+    "prettier": "^3.0.2",
+    "readline": "^1.3.0",
+    "terminal-image": "^2.0.0"
+  }
+}
